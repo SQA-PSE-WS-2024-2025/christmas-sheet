@@ -1,7 +1,5 @@
 package de.unistuttgart.iste.sqa.pse.tiktaktoe;
 
-import java.util.Optional;
-
 import de.hamstersimulator.objectsfirst.datatypes.Location;
 
 /**

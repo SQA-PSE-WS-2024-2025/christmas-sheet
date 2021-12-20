@@ -23,6 +23,51 @@ public class Grid {
 		super();
 		generateAreas();
 	}
+	
+	/**
+	 * checks if the given areaNr has a matching Area on the Grid. In the default
+	 * case of a 3x3 Grid, this is equivalent to checking for 0 < areaNr < 8.
+	 *
+	 * @param areaNr the number to be checked for an Area
+	 * @return true if the number is valid, false otherwise
+	 */
+	public boolean areaNumberExists(final int areaNr) {
+		return areaNr >= 0 && areaNr < areas.size();
+	}
+	
+	/**
+	 * returns the Area object associated with the given areaNr
+	 *
+	 * @param areaNr the Area's number on the Grid
+	 * @return the Area
+	 * @requires 0 < areaNr < areas.size()
+	 */
+	public Area getArea(final int areaNr) {
+		if (areaNr < 0 || areaNr >= areas.size()) {
+			throw new IllegalArgumentException("The area with the following number does not exist:" + areaNr);
+		}
+		return areas.get(areaNr);
+	}
+
+	/**
+	 * returns the Area object associated with the given row and column
+	 *
+	 * @param areaRow    the Area's row
+	 * @param areaColumn the Area's column
+	 * @return the Area
+	 * @requires 0 <= areaRow < TOTAL_ROW_NUMBER
+	 * @requires 0 <= areaColumn < TOTAL_COLUMN_NUMBER
+	 */
+	public Area getArea(final int areaRow, final int areaColumn) {
+		if (!(areaRow > 0 && areaRow < TOTAL_ROW_NUMBER)) {
+			throw new IllegalArgumentException("areaRow not on the Grid");
+		}
+		if (!(areaColumn > 0 && areaColumn < TOTAL_COLUMN_NUMBER)) {
+			throw new IllegalArgumentException("areaColumn not on the Grid");
+		}
+		final int areaNr = areaRow * TOTAL_COLUMN_NUMBER + areaColumn;
+		return getArea(areaNr);
+	}
 
 	/**
 	 * sets up the Grid with Areas depending on the size.
@@ -78,40 +123,6 @@ public class Grid {
 	}
 
 	/**
-	 * returns the Area object associated with the given areaNr
-	 *
-	 * @param areaNr the Area's number on the Grid
-	 * @return the Area
-	 * @requires 0 < areaNr < areas.size()
-	 */
-	public Area getArea(final int areaNr) {
-		if (areaNr < 0 || areaNr >= areas.size()) {
-			throw new IllegalArgumentException("The area with the following number does not exist:" + areaNr);
-		}
-		return areas.get(areaNr);
-	}
-
-	/**
-	 * returns the Area object associated with the given row and column
-	 *
-	 * @param areaRow    the Area's row
-	 * @param areaColumn the Area's column
-	 * @return the Area
-	 * @requires 0 <= areaRow < TOTAL_ROW_NUMBER
-	 * @requires 0 <= areaColumn < TOTAL_COLUMN_NUMBER
-	 */
-	public Area getArea(final int areaRow, final int areaColumn) {
-		if (!(areaRow > 0 && areaRow < TOTAL_ROW_NUMBER)) {
-			throw new IllegalArgumentException("areaRow not on the Grid");
-		}
-		if (!(areaColumn > 0 && areaColumn < TOTAL_COLUMN_NUMBER)) {
-			throw new IllegalArgumentException("areaColumn not on the Grid");
-		}
-		final int areaNr = areaRow * TOTAL_COLUMN_NUMBER + areaColumn;
-		return getArea(areaNr);
-	}
-
-	/**
 	 * returns an Area's row on the Grid
 	 *
 	 * @param area the Area
@@ -135,17 +146,6 @@ public class Grid {
 		assert areas.contains(area);
 		final int areaNr = areas.indexOf(area);
 		return areaNr % TOTAL_COLUMN_NUMBER;
-	}
-
-	/**
-	 * checks if the given areaNr has a matching Area on the Grid. In the default
-	 * case of a 3x3 Grid, this is equivalent to checking for 0 < areaNr < 8.
-	 *
-	 * @param areaNr the number to be checked for an Area
-	 * @return true if the number is valid, false otherwise
-	 */
-	public boolean areaNumberExists(final int areaNr) {
-		return areaNr >= 0 && areaNr < areas.size();
 	}
 
 }
