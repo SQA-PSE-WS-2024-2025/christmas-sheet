@@ -10,7 +10,7 @@ import de.hamstersimulator.objectsfirst.datatypes.Location;
  * Areas. It offers operations to convert from Areas to territory locations to
  * integrate the Grid into the Hamsterworld.
  */
-public class TicTacToeGrid {
+public class Grid {
 	private static final int TOTAL_ROW_NUMBER = 3;
 	private static final int TOTAL_COLUMN_NUMBER = 3;
 	private static final int AREA_ROW_FIELD_SIZE = 3;
@@ -19,7 +19,7 @@ public class TicTacToeGrid {
 
 	private final List<Area> areas = new ArrayList<>();
 
-	public TicTacToeGrid() {
+	public Grid() {
 		super();
 		generateAreas();
 	}

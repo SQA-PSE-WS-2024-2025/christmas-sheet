@@ -13,7 +13,7 @@ import de.hamstersimulator.objectsfirst.external.simple.game.SimpleHamsterGame;
  * game where the whole board is covered.
  */
 public class TicTacToeHamsterGame extends SimpleHamsterGame {
-	private final TicTacToeGrid grid;
+	private final Grid grid;
 	private TicTacToeHamster currentPlayer;
 	private TicTacToeHamster otherPlayer;
 
@@ -21,7 +21,7 @@ public class TicTacToeHamsterGame extends SimpleHamsterGame {
 		this.loadTerritoryFromResourceFile("/territories/territory.ter");
 		this.displayInNewGameWindow();
 		game.startGame();
-		this.grid = new TicTacToeGrid();
+		this.grid = new Grid();
 		this.currentPlayer = turnIntoTicTacToeHamster(paule);
 		this.otherPlayer = createNewTicTacToeHamster();
 		game.setSpeed(10.00); // Auto Speed Up the game
