@@ -55,22 +55,37 @@ public class TicTacToeHamster {
 		drawingStrategy.drawPlayerSymbol(this);
 	}
 
+	/**
+	 * @see de.hamstersimulator.objectsfirst.external.model.Hamster#mouthEmpty()
+	 */
 	public boolean mouthEmpty() {
 		return hamster.mouthEmpty();
 	}
 
+	/**
+	 * @see de.hamstersimulator.objectsfirst.external.model.Hamster#write(String)
+	 */
 	public void write(final String text) {
 		hamster.write(text);
 	}
 
+	/**
+	 * @see de.hamstersimulator.objectsfirst.external.model.Hamster#readNumber(String)
+	 */
 	public int readNumber(final String number) {
 		return hamster.readNumber(number);
 	}
 
+	/**
+	 * @see de.hamstersimulator.objectsfirst.external.model.Hamster#move()
+	 */
 	public void move() {
 		hamster.move();
 	}
 
+	/**
+	 * @see de.hamstersimulator.objectsfirst.external.model.Hamster#turnLeft()
+	 */
 	public void turnLeft() {
 		hamster.turnLeft();
 	}
