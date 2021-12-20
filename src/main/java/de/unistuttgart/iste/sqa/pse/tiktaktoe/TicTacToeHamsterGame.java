@@ -15,16 +15,30 @@ import de.hamstersimulator.objectsfirst.external.simple.game.SimpleHamsterGame;
 public class TicTacToeHamsterGame extends SimpleHamsterGame {
 	private final TicTacToeGrid grid;
 	private TicTacToeHamster currentPlayer;
+	private TicTacToeHamster otherPlayer;
 
 	public TicTacToeHamsterGame() {
 		this.loadTerritoryFromResourceFile("/territories/territory.ter");
 		this.displayInNewGameWindow();
 		game.startGame();
 		this.grid = new TicTacToeGrid();
+		this.currentPlayer = turnIntoTicTacToeHamster(paule);
+		this.otherPlayer = createNewTicTacToeHamster();
 		game.setSpeed(10.00); // Auto Speed Up the game
+	}
+
+	private TicTacToeHamster turnIntoTicTacToeHamster(final Hamster hamster) {
+		// Your code for 1c (i) should be here
+		return null;
+	}
+
+	private TicTacToeHamster createNewTicTacToeHamster() {
+		// Your code for 1c (i) should be here
+		return null;
 	}
 
 	@Override
 	protected void run() {
+		// Your code for 1c (ii) and (iii) and some following tasks should be here
 	}
 }
