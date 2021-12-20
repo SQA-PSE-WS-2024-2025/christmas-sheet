@@ -40,7 +40,7 @@ public class Grid {
 	 *
 	 * @param areaNr the Area's number on the Grid
 	 * @return the Area
-	 * @requires 0 < areaNr < areas.size()
+	 * @requires 0 <= areaNr < areas.size()
 	 */
 	public Area getArea(final int areaNr) {
 		if (areaNr < 0 || areaNr >= areas.size()) {
@@ -59,10 +59,10 @@ public class Grid {
 	 * @requires 0 <= areaColumn < TOTAL_COLUMN_NUMBER
 	 */
 	public Area getArea(final int areaRow, final int areaColumn) {
-		if (!(areaRow > 0 && areaRow < TOTAL_ROW_NUMBER)) {
+		if (!(areaRow >= 0 && areaRow < TOTAL_ROW_NUMBER)) {
 			throw new IllegalArgumentException("areaRow not on the Grid");
 		}
-		if (!(areaColumn > 0 && areaColumn < TOTAL_COLUMN_NUMBER)) {
+		if (!(areaColumn >= 0 && areaColumn < TOTAL_COLUMN_NUMBER)) {
 			throw new IllegalArgumentException("areaColumn not on the Grid");
 		}
 		final int areaNr = areaRow * TOTAL_COLUMN_NUMBER + areaColumn;
@@ -113,8 +113,8 @@ public class Grid {
 	 * @requires 0 <= areaColumn < TOTAL_COLUMN_NUMBER
 	 */
 	private Location areaToTerritoryLocation(final int areaRow, final int areaColumn) {
-		assert areaRow > 0 && areaRow < TOTAL_ROW_NUMBER;
-		assert areaColumn > 0 && areaColumn < TOTAL_COLUMN_NUMBER;
+		assert areaRow >= 0 && areaRow < TOTAL_ROW_NUMBER;
+		assert areaColumn >= 0 && areaColumn < TOTAL_COLUMN_NUMBER;
 
 		final int row = 1 + (GRID_SEPARATOR_FIELD_SIZE + AREA_ROW_FIELD_SIZE) * areaRow;
 		final int column = 1 + (GRID_SEPARATOR_FIELD_SIZE + AREA_COLUMN_FIELD_SIZE) * areaColumn;
