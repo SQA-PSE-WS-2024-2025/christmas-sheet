@@ -6,8 +6,9 @@ import java.util.List;
 import de.hamstersimulator.objectsfirst.datatypes.Location;
 
 /**
- * This class represents the actual Tic-Tac-Toe board, consisting of multiple Areas.
- * It offers operations to convert from Areas to territory locations to integrate the Grid into the Hamsterworld.
+ * This class represents the actual Tic-Tac-Toe board, consisting of multiple
+ * Areas. It offers operations to convert from Areas to territory locations to
+ * integrate the Grid into the Hamsterworld.
  */
 public class TicTacToeGrid {
 	private static final int TOTAL_ROW_NUMBER = 3;
@@ -29,37 +30,40 @@ public class TicTacToeGrid {
 	private void generateAreas() {
 		for (int currentAreaNumber = 0; currentAreaNumber < TOTAL_ROW_NUMBER
 				* TOTAL_COLUMN_NUMBER; currentAreaNumber++) {
-			Location areaLocation = areaToTerritoryLocation(currentAreaNumber);
-			Area area = new Area(areaLocation);
+			final Location areaLocation = areaToTerritoryLocation(currentAreaNumber);
+			final Area area = new Area(areaLocation);
 			this.areas.add(area);
 		}
 	}
 
 	/**
-	 * convert an area number into a Location that corresponds to the top left tile of the Area
+	 * convert an area number into a Location that corresponds to the top left tile
+	 * of the Area
 	 *
-	 * @param areaNr an int between 0 and 8, numbered by
-	 *               rows then columns (0 is top left, 4 is center)
-	 * @return a Location object of the top left tile of the Area associated with the areaNr
+	 * @param areaNr an int between 0 and 8, numbered by rows then columns (0 is top
+	 *               left, 4 is center)
+	 * @return a Location object of the top left tile of the Area associated with
+	 *         the areaNr
 	 * @requires areaNumberExists(areaNr)
 	 */
 	private Location areaToTerritoryLocation(final int areaNr) {
 		assert (areaNr >= 0);
 		assert (areaNr < TOTAL_ROW_NUMBER * TOTAL_COLUMN_NUMBER);
 
-		int areaRow = (int) Math.floor((float) areaNr / TOTAL_COLUMN_NUMBER);
-		int areaColumn = areaNr % TOTAL_COLUMN_NUMBER;
+		final int areaRow = (int) Math.floor((float) areaNr / TOTAL_COLUMN_NUMBER);
+		final int areaColumn = areaNr % TOTAL_COLUMN_NUMBER;
 
 		return areaToTerritoryLocation(areaRow, areaColumn);
 	}
 
 	/**
-	 * given an Area's row and column on the Tic-Tac-Toe Grid, returns the Location that corresponds to the top left tile of the Area
+	 * given an Area's row and column on the Tic-Tac-Toe Grid, returns the Location
+	 * that corresponds to the top left tile of the Area
 	 *
 	 * @param areaRow    the row of the Area, between 0 and 2
 	 * @param areaColumn the column of the Area, between 0 and 2
 	 * @return a Location object indicating the top left corner of the area on the
-	 * tic-tac-toe board
+	 *         tic-tac-toe board
 	 * @requires 0 <= areaRow < TOTAL_ROW_NUMBER
 	 * @requires 0 <= areaColumn < TOTAL_COLUMN_NUMBER
 	 */
@@ -120,7 +124,6 @@ public class TicTacToeGrid {
 		return areaNr / TOTAL_COLUMN_NUMBER;
 	}
 
-
 	/**
 	 * returns an Area's row on the Grid
 	 *
@@ -135,13 +138,13 @@ public class TicTacToeGrid {
 	}
 
 	/**
-	 * checks if the given areaNr has a matching Area on the Grid.
-	 * In the default case of a 3x3 Grid, this is equivalent to checking for 0 < areaNr < 8.
+	 * checks if the given areaNr has a matching Area on the Grid. In the default
+	 * case of a 3x3 Grid, this is equivalent to checking for 0 < areaNr < 8.
 	 *
 	 * @param areaNr the number to be checked for an Area
 	 * @return true if the number is valid, false otherwise
 	 */
-	public boolean areaNumberExists(int areaNr) {
+	public boolean areaNumberExists(final int areaNr) {
 		return areaNr >= 0 && areaNr < areas.size();
 	}
 

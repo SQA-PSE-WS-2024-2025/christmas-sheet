@@ -5,7 +5,8 @@ import de.hamstersimulator.objectsfirst.datatypes.Location;
 import de.hamstersimulator.objectsfirst.external.model.Hamster;
 
 /**
- * A wrapper around a Hamster that offers additional useful operations to move around the Territory.
+ * A wrapper around a Hamster that offers additional useful operations to move
+ * around the Territory.
  */
 public class TicTacToeHamster {
 	private final Hamster hamster;
@@ -58,11 +59,11 @@ public class TicTacToeHamster {
 		return hamster.mouthEmpty();
 	}
 
-	public void write(String text) {
+	public void write(final String text) {
 		hamster.write(text);
 	}
 
-	public int readNumber(String number) {
+	public int readNumber(final String number) {
 		return hamster.readNumber(number);
 	}
 

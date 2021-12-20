@@ -11,11 +11,12 @@ public class Area {
 	private final Location location;
 
 	/**
-	 * create a new Area with the given Location as its 'start location', i.e. its top-left tile
+	 * create a new Area with the given Location as its 'start location', i.e. its
+	 * top-left tile
 	 *
 	 * @param startLocation the Area's start location
 	 */
-	public Area(Location startLocation) {
+	public Area(final Location startLocation) {
 		super();
 		this.location = startLocation;
 	}
