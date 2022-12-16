@@ -124,5 +124,4 @@ public class TicTacToeHamster {
 		hamster.turnLeft();
 		hamster.turnLeft();
 	}
-
 }

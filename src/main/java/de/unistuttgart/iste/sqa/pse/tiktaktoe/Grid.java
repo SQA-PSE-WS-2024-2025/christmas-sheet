@@ -1,9 +1,8 @@
 package de.unistuttgart.iste.sqa.pse.tiktaktoe;
 
+import de.hamstersimulator.objectsfirst.datatypes.Location;
 import java.util.ArrayList;
 import java.util.List;
-
-import de.hamstersimulator.objectsfirst.datatypes.Location;
 
 /**
  * This class represents the actual Tic-Tac-Toe board, consisting of multiple
@@ -23,7 +22,7 @@ public class Grid {
 		super();
 		generateAreas();
 	}
-	
+
 	/**
 	 * checks if the given areaNr has a matching Area on the Grid. In the default
 	 * case of a 3x3 Grid, this is equivalent to checking for 0 < areaNr < 8.
@@ -34,7 +33,7 @@ public class Grid {
 	public boolean areaNumberExists(final int areaNr) {
 		return areaNr >= 0 && areaNr < areas.size();
 	}
-	
+
 	/**
 	 * returns the Area object associated with the given areaNr
 	 *
@@ -73,8 +72,9 @@ public class Grid {
 	 * sets up the Grid with Areas depending on the size.
 	 */
 	private void generateAreas() {
-		for (int currentAreaNumber = 0; currentAreaNumber < TOTAL_ROW_NUMBER
-				* TOTAL_COLUMN_NUMBER; currentAreaNumber++) {
+		for (int currentAreaNumber = 0;
+				currentAreaNumber < TOTAL_ROW_NUMBER * TOTAL_COLUMN_NUMBER;
+				currentAreaNumber++) {
 			final Location areaLocation = areaToTerritoryLocation(currentAreaNumber);
 			final Area area = new Area(areaLocation);
 			this.areas.add(area);
@@ -147,5 +147,4 @@ public class Grid {
 		final int areaNr = areas.indexOf(area);
 		return areaNr % TOTAL_COLUMN_NUMBER;
 	}
-
 }

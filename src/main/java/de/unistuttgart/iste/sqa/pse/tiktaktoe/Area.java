@@ -25,5 +25,4 @@ public class Area {
 	public Location getLocation() {
 		return location;
 	}
-
 }
