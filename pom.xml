@@ -38,7 +38,7 @@
 					<execution>
 						<id>TikTakToeHamsterGameApp</id>
 						<configuration>
-							<mainClass>de.unistuttgart.iste.sqa.pse.tiktaktoe.TikTakToeHamsterGameApp</mainClass>
+							<mainClass>de.unistuttgart.iste.sqa.pse.tictactoe.TicTacToeHamsterGameApp</mainClass>
 						</configuration>
 					</execution>
 				</executions>

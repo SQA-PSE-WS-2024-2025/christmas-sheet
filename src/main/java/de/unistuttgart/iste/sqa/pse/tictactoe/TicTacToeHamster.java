@@ -1,4 +1,4 @@
-package de.unistuttgart.iste.sqa.pse.tiktaktoe;
+package de.unistuttgart.iste.sqa.pse.tictactoe;
 
 import de.hamstersimulator.objectsfirst.datatypes.Direction;
 import de.hamstersimulator.objectsfirst.datatypes.Location;

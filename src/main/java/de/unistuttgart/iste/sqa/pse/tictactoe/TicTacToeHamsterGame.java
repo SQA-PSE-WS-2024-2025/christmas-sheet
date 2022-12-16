@@ -1,4 +1,4 @@
-package de.unistuttgart.iste.sqa.pse.tiktaktoe;
+package de.unistuttgart.iste.sqa.pse.tictactoe;
 
 import de.hamstersimulator.objectsfirst.external.model.Hamster;
 import de.hamstersimulator.objectsfirst.external.simple.game.SimpleHamsterGame;

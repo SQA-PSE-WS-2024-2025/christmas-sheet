@@ -1,4 +1,4 @@
-package de.unistuttgart.iste.sqa.pse.tiktaktoe;
+package de.unistuttgart.iste.sqa.pse.tictactoe;
 
 public class TicTacToeHamsterGameApp {
 	public static void main(String[] args) {
