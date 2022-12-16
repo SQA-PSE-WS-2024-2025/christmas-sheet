@@ -36,7 +36,7 @@
 				<version>3.1.0</version>
 				<executions>
 					<execution>
-						<id>TikTakToeHamsterGameApp</id>
+						<id>TicTacToeHamsterGameApp</id>
 						<configuration>
 							<mainClass>de.unistuttgart.iste.sqa.pse.tictactoe.TicTacToeHamsterGameApp</mainClass>
 						</configuration>
